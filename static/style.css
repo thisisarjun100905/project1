@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: url("bg.jpg") center/cover no-repeat;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.container {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+}
+
+.glow {
+    text-shadow: 0 0 15px #ff4d6d, 0 0 40px #ff758f;
+}
+
+.question {
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
+    margin: 20px 0 30px;
+}
+
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.buttons-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    width: 140px;
+    height: 56px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+#yesBtn {
+    background: linear-gradient(45deg, #ff4d6d, #ff758f);
+    color: white;
+}
+
+#noBtn {
+    background: white;
+    color: #ff4d6d;
+    position: relative;
+}
+
+#message {
+    margin-top: 25px;
+    font-size: clamp(1.2rem, 4vw, 1.6rem);
+    font-weight: 600;
+    white-space: pre-line;
+}
+
+/* Floating hearts */
+.floating {
+    position: absolute;
+    font-size: 28px;
+    animation: floatUp linear infinite;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    from { bottom: -50px; opacity: 1; }
+    to { bottom: 110vh; opacity: 0; }
+}
+
+/* Rose petals */
+.rose {
+    position: absolute;
+    top: -50px;
+    font-size: 26px;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.8;
+    }
+}
+
+/* Love banner */
+#love-banner {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    color: white;
+    text-shadow: 0 0 30px #ff4d6d;
+    z-index: 999;
+}
+
+/* Party emojis */
+.party {
+    position: fixed;
+    font-size: 36px;
+    animation: partyMove linear forwards;
+}
+
+@keyframes partyMove {
+    from { transform: translateY(100vh); }
+    to { transform: translateY(-20vh); }
+}
+
+/* Rose burst */
+.rose-burst {
+    position: fixed;
+    font-size: 32px;
+    animation: roseBurst 2.5s ease-out forwards;
+}
+
+@keyframes roseBurst {
+    to {
+        transform: translate(var(--x), var(--y)) rotate(360deg);
+        opacity: 0;
+    }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For Bhavna ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<div class="container">
+    <h1 id="mainTitle" class="glow">Bhavna 💖</h1>
+    <p id="questionText" class="question pulse">
+    Will you be my Valentine? 🥰💘
+</p>
+
+    <div class="buttons-row">
+        <button id="yesBtn">Yes 💕</button>
+        <button id="noBtn">No 😢</button>
+    </div>
+
+    <p id="message"></p>
+</div>
+
+<div id="floating"></div>
+<div id="rose-container"></div>
+<div id="love-banner"></div>
+
+<!-- 🎵 AUDIO (MOBILE SAFE) -->
+<audio id="loveMusic" muted playsinline>
+    <source src="{{ url_for('static', filename='love.mp3') }}" type="audio/mpeg">
+</audio>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
